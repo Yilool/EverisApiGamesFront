@@ -1,0 +1,39 @@
+<!-- Form container -->
+<div class="container py-3">
+    <h1 class="text-center"><small class="font-italic text-success">GET </small>GAME</h1>
+    <form [formGroup]="gameFormContent">
+        <div class="form-group">
+            <label class="font-weight-bold" for="prdId">Id</label>
+            <input formControlName="id" type="text" class="form-control" placeholder="Enter game id">
+        </div>
+        <div class="btn-group flex-wrap">
+            <button type="button" class="btn btn-info" [routerLink]="['/']">Volver</button>
+            <button type="button" class="btn btn-info" (click)="onGet()">Obtener Juego</button>
+        </div>
+    </form>
+</div>
+<!-- Result container -->
+<div class="container">
+    <div *ngIf="!loading">
+        <table class="table table-striped table-bordered table-hover table-dark">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Relase Date</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">{{ game.id }}</th>
+                    <td>{{ game.title }}</td>
+                    <td>{{ game.relDate }}</td>
+                    <td>{{ game.category }}</td>
+                    <td>{{ game.gender }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

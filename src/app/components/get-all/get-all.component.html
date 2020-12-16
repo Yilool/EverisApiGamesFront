@@ -1,0 +1,32 @@
+<!-- Form container -->
+<div class="container py-3">
+    <h1 class="text-center"><small class="font-italic text-success">GET </small>GAMES</h1>
+    <div class="btn-group flex-wrap">
+        <button type="button" class="btn btn-info" [routerLink]="['game']">Volver</button>
+    </div>
+</div>
+<!-- Result container -->
+<div class="container">
+    <div *ngIf="!loading">
+        <table class="table table-striped table-bordered table-hover table-dark">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Relase Date</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let g of games">
+                    <th scope="row">{{ g.id }}</th>
+                    <td>{{ g.title }}</td>
+                    <td>{{ g.relDate }}</td>
+                    <td>{{ g.category }}</td>
+                    <td>{{ g.gender }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<!-- Form container -->
+<div class="container py-3">
+    <h1 class="text-center"><small class="font-italic text-success">Delete </small>GAME</h1>
+    <form [formGroup]="gameFormContent">
+        <div class="form-group">
+            <label class="font-weight-bold" for="prdId">Id</label>
+            <input formControlName="id" type="text" class="form-control" placeholder="Enter game id">
+        </div>
+        <div class="btn-group flex-wrap">
+            <button type="button" class="btn btn-info" [routerLink]="['/']">Volver</button>
+            <button type="submit" class="btn btn-info" (click)="onDel()">Borrar Juego</button>
+        </div>
+    </form>
+</div>

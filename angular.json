@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "EverisApiGamesFront"
+  "defaultProject": "EverisApiGamesFront",
+  "cli": {
+    "analytics": false
+  }
 }
